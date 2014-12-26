@@ -1,0 +1,71 @@
+初次从terminal进入mysql时
+
+appledembp:local apple$ /usr/local/mysql/bin/mysql -u root -p
+Enter password:
+
+
+只有输入“；”之后再输入enter才会run
+//create new database firstly
+
+mysql> create database test123
+    -> ;
+
+
+
+////show all the databases :: show databases;
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| test               |
+| test123            |
++--------------------+
+5 rows in set (0.00 sec)
+Query OK, 1 row affected (0.00 sec)
+
+
+
+//进入到database test123 内部
+mysql> use test123
+Database changed
+
+
+
+//在这个database test123 内部构造表格
+mysql> create table products (
+    ->  prod_id char(10) not null,
+    ->  prod_price decimal(8,2) not null);
+Query OK, 0 rows affected (0.01 sec)
+
+
+
+//有了不同的columns之后开始向里面插入实例：：也就是rows
+mysql> insert into products values (1,1.8);
+Query OK, 1 row affected (0.00 sec)
+
+
+
+//插入实例之后就可以进行查看了
+mysql> select * from products
+    -> ;
++---------+------------+
+| prod_id | prod_price |
++---------+------------+
+| 1       |       1.80 |
++---------+------------+
+1 row in set (0.01 sec)
+
+
+//最后退出sql
+mysql> exit
+
+
+
+//下次再进入terminal登陆mysql查看所有database时
+appledembp:local apple$ /usr/local/mysql/bin/mysql -u root -p
+Enter password:
+仍然密码直接输入回车即可
