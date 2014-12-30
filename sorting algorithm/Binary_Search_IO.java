@@ -47,7 +47,11 @@ class BinarySearch
   }
 }
 
-
+void directlyEditViaGitHub()
+{
+  System.out.println("WILL THIS PART TURN RED?");
+}
+//WILL THE DIRECTLY EDITED COMMENT TRUN RED?
 
 //in the array package there is a BinarySearch API to directly use
 //Other methods of searching are Linear search and Hashing. 
