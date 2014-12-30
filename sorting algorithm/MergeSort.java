@@ -63,3 +63,9 @@ void merge(int[] arr, int[] helper, int low, int middle, int high)
 		arr[current+i] = helper[helperleft +i];
 	}
 }
+
+
+void checkingGitRed(){
+	System.out.println("Will this part of function be red if I update the current file to push?");
+	//WILL THE NEW COMMENT ALSO BE RED AFTER PUSHING?
+}
