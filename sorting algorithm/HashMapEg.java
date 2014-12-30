@@ -69,3 +69,75 @@ b.put("1","bc");
 遍历b的时候，先遍历到“1”，因为按顺序是先1后2。
 
 */
+
+//HashMap通常比TreeMap快一点(树和哈希表的数据结构使然)，建议多使用HashMap，在需要排序的Map时候才用TreeMap。
+
+//command+A && command+D
+import java.util.HashMap; 
+import java.util.Hashtable; 
+import java.util.Iterator; 
+import java.util.Map; 
+import java.util.TreeMap; 
+public class HashMapEg { 
+	public static void main(String[] args) { 
+		Map<String, String> map = new HashMap<String, String>(); 
+		map.put("a", "aaa"); 
+		map.put("b", "bbb"); 
+		map.put("c", "ccc"); 
+		map.put("d", "ddd"); 
+
+		Iterator<String> iterator = map.keySet().iterator(); 
+		//we have key set but we do not have valueSet?
+
+		while (iterator.hasNext()) { 
+			Object key = iterator.next(); 
+			System.out.println("map.get(key) is :" + map.get(key)); 
+		} 
+// 定义HashTable,用来测试 
+		Hashtable<String, String> tab = new Hashtable<String, String>(); 
+		tab.put("a", "aaa"); 
+		tab.put("b", "bbb"); 
+		tab.put("c", "ccc"); 
+		tab.put("d", "ddd"); 
+		Iterator<String> iterator_1 = tab.keySet().iterator(); 
+		while (iterator_1.hasNext()) { 
+			Object key = iterator_1.next(); 
+			System.out.println("tab.get(key) is :" + tab.get(key)); 
+		} 
+		TreeMap<String, String> tmp = new TreeMap<String, String>(); 
+		tmp.put("a", "aaa"); 
+		tmp.put("b", "bbb"); 
+		tmp.put("c", "ccc"); 
+		tmp.put("d", "cdc"); 
+		Iterator<String> iterator_2 = tmp.keySet().iterator(); 
+		while (iterator_2.hasNext()) { 
+			Object key = iterator_2.next(); 
+			System.out.println("tmp.get(key) is :" + tmp.get(key)); 
+		} 
+	} 
+} 
+
+//command+A && command+D
+//toString()  
+// -> Integer.toString()  /  Integer.parseInt()  /  arrayList.toArray() 
+import java.util.*; 
+public class Exp1 { 
+	public static void main(String[] args){ 
+		HashMap h1=new HashMap(); 
+		Random r1=new Random(); 
+		for (int i=0;i<1000;i++){ 
+			Integer t=new Integer(r1.nextInt(20)); 
+			if (h1.containsKey(t)) 
+				((Ctime)h1.get(t)).count++; 
+			else 
+				h1.put(t, new Ctime()); 
+		} 
+		System.out.println(h1); 
+	} 
+} 
+class Ctime{ 
+	int count=1; 
+	public String toString(){ 
+		return Integer.toString(count); 
+	} 
+} 
