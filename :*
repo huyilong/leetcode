@@ -1,9 +1,0 @@
-/*
-/** 结点的数据 */
-typedef int tree_node_elem_t;
-/*
-*@struct
-*@brief 二叉树结点 */
-struct binary_tree_node_t { binary_tree_node_t *left; binary_tree_node_t *right; tree_node_elem_t elem; /* 结点的数据 */
-};
-*/
